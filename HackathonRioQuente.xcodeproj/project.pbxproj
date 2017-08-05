@@ -9,25 +9,35 @@
 /* Begin PBXBuildFile section */
 		39547EF41F35EAC5004BBD4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547EF31F35EAC5004BBD4C /* main.m */; };
 		39547EF71F35EAC5004BBD4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547EF61F35EAC5004BBD4C /* AppDelegate.m */; };
-		39547EFA1F35EAC5004BBD4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547EF91F35EAC5004BBD4C /* ViewController.m */; };
 		39547EFD1F35EAC5004BBD4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39547EFB1F35EAC5004BBD4C /* Main.storyboard */; };
 		39547F001F35EAC5004BBD4C /* HackathonRioQuente.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39547EFE1F35EAC5004BBD4C /* HackathonRioQuente.xcdatamodeld */; };
 		39547F021F35EAC5004BBD4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39547F011F35EAC5004BBD4C /* Assets.xcassets */; };
 		39547F051F35EAC5004BBD4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39547F031F35EAC5004BBD4C /* LaunchScreen.storyboard */; };
+		39547F0E1F35ED5C004BBD4C /* FotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547F0D1F35ED5C004BBD4C /* FotosCollectionViewController.m */; };
+		39547F121F35F696004BBD4C /* CoracaoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547F111F35F696004BBD4C /* CoracaoView.m */; };
+		39547F151F35F726004BBD4C /* PhotoCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547F141F35F726004BBD4C /* PhotoCellCollectionViewCell.m */; };
+		74C5C456A72FDA1373210841 /* libPods-HackathonRioQuente.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DCCEA891A907AC5936FBA9 /* libPods-HackathonRioQuente.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C94207BE7C47E42ED3DF2E3 /* Pods-HackathonRioQuente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonRioQuente.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonRioQuente/Pods-HackathonRioQuente.debug.xcconfig"; sourceTree = "<group>"; };
+		37ADAD58CDE3530524444D1B /* Pods-HackathonRioQuente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonRioQuente.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonRioQuente/Pods-HackathonRioQuente.release.xcconfig"; sourceTree = "<group>"; };
 		39547EEF1F35EAC5004BBD4C /* HackathonRioQuente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonRioQuente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39547EF31F35EAC5004BBD4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39547EF51F35EAC5004BBD4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39547EF61F35EAC5004BBD4C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		39547EF81F35EAC5004BBD4C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		39547EF91F35EAC5004BBD4C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		39547EFC1F35EAC5004BBD4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39547EFF1F35EAC5004BBD4C /* HackathonRioQuente.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackathonRioQuente.xcdatamodel; sourceTree = "<group>"; };
 		39547F011F35EAC5004BBD4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39547F041F35EAC5004BBD4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39547F061F35EAC5004BBD4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39547F0C1F35ED5C004BBD4C /* FotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FotosCollectionViewController.h; sourceTree = "<group>"; };
+		39547F0D1F35ED5C004BBD4C /* FotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FotosCollectionViewController.m; sourceTree = "<group>"; };
+		39547F101F35F696004BBD4C /* CoracaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoracaoView.h; sourceTree = "<group>"; };
+		39547F111F35F696004BBD4C /* CoracaoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoracaoView.m; sourceTree = "<group>"; };
+		39547F131F35F726004BBD4C /* PhotoCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCellCollectionViewCell.h; sourceTree = "<group>"; };
+		39547F141F35F726004BBD4C /* PhotoCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCellCollectionViewCell.m; sourceTree = "<group>"; };
+		98DCCEA891A907AC5936FBA9 /* libPods-HackathonRioQuente.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonRioQuente.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C5C456A72FDA1373210841 /* libPods-HackathonRioQuente.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +57,8 @@
 			children = (
 				39547EF11F35EAC5004BBD4C /* HackathonRioQuente */,
 				39547EF01F35EAC5004BBD4C /* Products */,
+				48A4F30DD3EF9CCA1D2AB90C /* Pods */,
+				E0A5BF8634D8A704CCD12B8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,15 +73,10 @@
 		39547EF11F35EAC5004BBD4C /* HackathonRioQuente */ = {
 			isa = PBXGroup;
 			children = (
-				39547EF51F35EAC5004BBD4C /* AppDelegate.h */,
-				39547EF61F35EAC5004BBD4C /* AppDelegate.m */,
-				39547EF81F35EAC5004BBD4C /* ViewController.h */,
-				39547EF91F35EAC5004BBD4C /* ViewController.m */,
 				39547EFB1F35EAC5004BBD4C /* Main.storyboard */,
-				39547F011F35EAC5004BBD4C /* Assets.xcassets */,
-				39547F031F35EAC5004BBD4C /* LaunchScreen.storyboard */,
-				39547F061F35EAC5004BBD4C /* Info.plist */,
-				39547EFE1F35EAC5004BBD4C /* HackathonRioQuente.xcdatamodeld */,
+				39547F0C1F35ED5C004BBD4C /* FotosCollectionViewController.h */,
+				39547F0D1F35ED5C004BBD4C /* FotosCollectionViewController.m */,
+				39547F0F1F35F68A004BBD4C /* CustomViews */,
 				39547EF21F35EAC5004BBD4C /* Supporting Files */,
 			);
 			path = HackathonRioQuente;
@@ -77,9 +85,43 @@
 		39547EF21F35EAC5004BBD4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				39547F011F35EAC5004BBD4C /* Assets.xcassets */,
+				39547F031F35EAC5004BBD4C /* LaunchScreen.storyboard */,
+				39547EF51F35EAC5004BBD4C /* AppDelegate.h */,
+				39547EF61F35EAC5004BBD4C /* AppDelegate.m */,
+				39547F061F35EAC5004BBD4C /* Info.plist */,
+				39547EFE1F35EAC5004BBD4C /* HackathonRioQuente.xcdatamodeld */,
 				39547EF31F35EAC5004BBD4C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39547F0F1F35F68A004BBD4C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				39547F101F35F696004BBD4C /* CoracaoView.h */,
+				39547F111F35F696004BBD4C /* CoracaoView.m */,
+				39547F131F35F726004BBD4C /* PhotoCellCollectionViewCell.h */,
+				39547F141F35F726004BBD4C /* PhotoCellCollectionViewCell.m */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		48A4F30DD3EF9CCA1D2AB90C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C94207BE7C47E42ED3DF2E3 /* Pods-HackathonRioQuente.debug.xcconfig */,
+				37ADAD58CDE3530524444D1B /* Pods-HackathonRioQuente.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0A5BF8634D8A704CCD12B8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98DCCEA891A907AC5936FBA9 /* libPods-HackathonRioQuente.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39547F091F35EAC5004BBD4C /* Build configuration list for PBXNativeTarget "HackathonRioQuente" */;
 			buildPhases = (
+				3A224729055E99DED2A72B86 /* [CP] Check Pods Manifest.lock */,
 				39547EEB1F35EAC5004BBD4C /* Sources */,
 				39547EEC1F35EAC5004BBD4C /* Frameworks */,
 				39547EED1F35EAC5004BBD4C /* Resources */,
+				7A2F28B69868CA49123F9E66 /* [CP] Embed Pods Frameworks */,
+				39BCFF0AF5A0C36326CB3245 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,15 +194,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39BCFF0AF5A0C36326CB3245 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonRioQuente/Pods-HackathonRioQuente-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A224729055E99DED2A72B86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7A2F28B69868CA49123F9E66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonRioQuente/Pods-HackathonRioQuente-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		39547EEB1F35EAC5004BBD4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				39547F001F35EAC5004BBD4C /* HackathonRioQuente.xcdatamodeld in Sources */,
-				39547EFA1F35EAC5004BBD4C /* ViewController.m in Sources */,
+				39547F151F35F726004BBD4C /* PhotoCellCollectionViewCell.m in Sources */,
 				39547EF71F35EAC5004BBD4C /* AppDelegate.m in Sources */,
 				39547EF41F35EAC5004BBD4C /* main.m in Sources */,
+				39547F0E1F35ED5C004BBD4C /* FotosCollectionViewController.m in Sources */,
+				39547F121F35F696004BBD4C /* CoracaoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +370,7 @@
 		};
 		39547F0A1F35EAC5004BBD4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C94207BE7C47E42ED3DF2E3 /* Pods-HackathonRioQuente.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
@@ -287,6 +383,7 @@
 		};
 		39547F0B1F35EAC5004BBD4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37ADAD58CDE3530524444D1B /* Pods-HackathonRioQuente.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
@@ -316,6 +413,7 @@
 				39547F0B1F35EAC5004BBD4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
