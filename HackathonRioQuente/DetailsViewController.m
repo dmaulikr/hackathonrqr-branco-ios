@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
 const NSString *cloudnaryDetails = @"http://res.cloudinary.com/datveqkzs/image/upload/c_fit,l_camera_ktuaho,w_500/";
 
@@ -72,28 +73,65 @@ const NSString *cloudnaryBuy = @"http://res.cloudinary.com/datveqkzs/image/uploa
     //
     //    //Do stuff here...
     if (!self.pagou){
-        [self.pagarLabel setHidden:YES];
-        [self.baixarLabel setHidden:NO];
-        self.pagou = YES;
+        NSString *mensagem = @"Confirma compra do arquivo por U$ 0.99?";
         
-        NSString *url = [[cloudnaryBuy stringByAppendingString:self.fotoId] stringByAppendingString:@".jpg"];
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        dispatch_async(queue, ^(void) {
-            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-            UIImage* image = [[UIImage alloc] initWithData:imageData];
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.detailsPhotoView setImage:image];
-                    [self.detailsPhotoView setNeedsDisplay];
-                });
-            }
-        });
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Confirma Compra?"
+                                                                       message:mensagem
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Sim!!!" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  LAContext *contextoAutenticacaoLocal = [[LAContext alloc] init];
+                                                                  
+                                                                  if ([contextoAutenticacaoLocal canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]){
+                                                                      [contextoAutenticacaoLocal evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"#hackathonRQR" reply:^(BOOL success, NSError *error) {
+                                                                          if (success) {
+                                                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                  NSString *url = [[cloudnaryBuy stringByAppendingString:self.fotoId] stringByAppendingString:@".jpg"];
+                                                                                  dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+                                                                                  dispatch_async(queue, ^(void) {
+                                                                                      NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+                                                                                      UIImage* image = [[UIImage alloc] initWithData:imageData];
+                                                                                      if (image) {
+                                                                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                              [self.detailsPhotoView setImage:image];
+                                                                                              [self.detailsPhotoView setNeedsDisplay];
+                                                                                              [self.pagarLabel setHidden:YES];
+                                                                                              [self.baixarLabel setHidden:NO];
+                                                                                              self.pagou = YES;
+                                                                                          });
+                                                                                      }
+                                                                                  });
+                                                                              });
+                                                                          }
+                                                                          else{
+                                                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                  NSString *mensagem = @"Compra cancelada";
+                                                                                  
+                                                                                  UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cancelado"
+                                                                                                                                                 message:mensagem
+                                                                                                                                          preferredStyle:UIAlertControllerStyleAlert];
+                                                                                  
+                                                                                  UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                                                                        handler:^(UIAlertAction * action) {}];
+                                                                                  
+                                                                                  [alert addAction:defaultAction];
+                                                                                  [self presentViewController:alert animated:YES completion:nil];
+                                                                              });
+                                                                          }
+                                                                      }];
+                                                                  }
+                                                              
+                                                              }];
+        
+        UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [alert addAction:noAction];
+        //[self presentViewController:alert animated:YES completion:nil];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-//    else{
-//        [self.pagarLabel setHidden:NO];
-//        [self.baixarLabel setHidden:YES];
-//        self.pagou = NO;
-//    }
 }
 
 @end
