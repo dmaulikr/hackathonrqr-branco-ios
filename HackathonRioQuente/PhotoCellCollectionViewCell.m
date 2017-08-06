@@ -31,10 +31,8 @@
     self.coracao.bpm = self.numberLikes;
     if(self.voted)
     {
-        
         self.coracao.cor = [UIColor redColor];
         self.coracao.corBorda = [UIColor whiteColor];
-        self.coracao.corTexto = [UIColor blackColor];
     }
     else
     {
@@ -65,6 +63,10 @@
     //self.backgroundColor = [UIColor whiteColor];
     
     [self setNeedsDisplay];
+}
+
+-(void)bater{
+    [self.coracao bater];
 }
 
 @end

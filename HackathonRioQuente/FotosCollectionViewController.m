@@ -76,6 +76,7 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.voted = indexPath.row % 2 == 0 ? YES : NO;
     cell.numberLikes = indexPath.row;
     //cell.coracao.bpm = indexPath.row;
+    [cell setNeedsDisplay];
     return cell;
 }
 
@@ -103,26 +104,30 @@ static NSString * const reuseIdentifier = @"Cell";
  }
  */
 
-/*
- // Uncomment this method to specify if the specified item should be selected
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
+// // Uncomment this method to specify if the specified item should be selected
+// - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//     return YES;
+// }
 
-/*
- // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
- }
- 
- - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
- }
- 
- - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
- }
- */
+
+// // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+// - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+//	return NO;
+// }
+// 
+// - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+//	return YES;
+// }
+// 
+// - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+//     
+// }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    PhotoCellCollectionViewCell *cell = (PhotoCellCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.numberLikes = cell.numberLikes + 1;;
+    [cell bater];
+    [cell setNeedsDisplay];
+}
 
 @end

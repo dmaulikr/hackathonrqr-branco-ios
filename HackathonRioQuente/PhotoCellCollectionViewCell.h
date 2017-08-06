@@ -18,4 +18,6 @@ IB_DESIGNABLE
 
 @property (assign, nonatomic) BOOL voted;
 
+-(void)bater;
+
 @end
