@@ -18,6 +18,7 @@
 		39547F151F35F726004BBD4C /* PhotoCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547F141F35F726004BBD4C /* PhotoCellCollectionViewCell.m */; };
 		39547F191F36B393004BBD4C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547F181F36B393004BBD4C /* Photo.m */; };
 		39547F1B1F36B669004BBD4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39547F1A1F36B669004BBD4C /* GoogleService-Info.plist */; };
+		39547F1E1F37478E004BBD4C /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39547F1D1F37478E004BBD4C /* DetailsViewController.m */; };
 		74C5C456A72FDA1373210841 /* libPods-HackathonRioQuente.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DCCEA891A907AC5936FBA9 /* libPods-HackathonRioQuente.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		39547F171F36B393004BBD4C /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		39547F181F36B393004BBD4C /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		39547F1A1F36B669004BBD4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		39547F1C1F37478E004BBD4C /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		39547F1D1F37478E004BBD4C /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		98DCCEA891A907AC5936FBA9 /* libPods-HackathonRioQuente.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonRioQuente.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +84,8 @@
 				39547EFB1F35EAC5004BBD4C /* Main.storyboard */,
 				39547F0C1F35ED5C004BBD4C /* FotosCollectionViewController.h */,
 				39547F0D1F35ED5C004BBD4C /* FotosCollectionViewController.m */,
+				39547F1C1F37478E004BBD4C /* DetailsViewController.h */,
+				39547F1D1F37478E004BBD4C /* DetailsViewController.m */,
 				39547F161F36B37E004BBD4C /* Model */,
 				39547F0F1F35F68A004BBD4C /* CustomViews */,
 				39547EF21F35EAC5004BBD4C /* Supporting Files */,
@@ -271,6 +276,7 @@
 				39547EF41F35EAC5004BBD4C /* main.m in Sources */,
 				39547F0E1F35ED5C004BBD4C /* FotosCollectionViewController.m in Sources */,
 				39547F121F35F696004BBD4C /* CoracaoView.m in Sources */,
+				39547F1E1F37478E004BBD4C /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

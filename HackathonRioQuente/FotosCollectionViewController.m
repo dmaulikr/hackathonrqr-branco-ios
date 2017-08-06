@@ -9,6 +9,9 @@
 #import "FotosCollectionViewController.h"
 #import "PhotoCellCollectionViewCell.h"
 #import "Photo.h"
+#import "DetailsViewController.h"
+
+const NSString *cloudnary = @"http://res.cloudinary.com/datveqkzs/image/upload/w_400,h_400,c_crop,g_face,r_max/w_60/v1502021530/";
 
 @interface FotosCollectionViewController ()
 
@@ -88,10 +91,14 @@ static NSString * const reuseIdentifier = @"Cell";
     //    cell.coracao.cor = [UIColor whiteColor];
     //    cell.coracao.corBorda = [UIColor blackColor];
     
+    
     NSString *url = [self.photosArray objectAtIndex:indexPath.row];
+    cell.fotoId = url;
+    url = [[cloudnary stringByAppendingString:url] stringByAppendingString:@".jpg"];
     cell.voted = indexPath.row % 2 == 0 ? YES : NO;
     cell.numberLikes = indexPath.row;
     cell.photoUrl = url;
+    
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     dispatch_async(queue, ^(void) {
@@ -120,17 +127,17 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     CGSize newSize = CGSizeZero;
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    CGSize screenSize = screenBounds.size;
+//    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+//    CGSize screenSize = screenBounds.size;
     
-    newSize.width = screenSize.width * 0.95;
-    newSize.height = 555.0;
+    newSize.width = 60.0;
+    newSize.height = 60.0;
     
     return newSize;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(12, 12, 3, 0);
+    return UIEdgeInsetsMake(3, 3, 3, 0);
 }
 
 /*
@@ -161,11 +168,21 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoCellCollectionViewCell *cell = (PhotoCellCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.numberLikes = cell.numberLikes + 1;;
-    [cell bater];
-    [cell setNeedsDisplay];
+    [self performSegueWithIdentifier:@"Details" sender:cell];
+//    cell.numberLikes = cell.numberLikes + 1;;
+//    [cell bater];
+//    [cell setNeedsDisplay];
+    
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"Details"]){
+        DetailsViewController *dvc = (DetailsViewController *)segue.destinationViewController;
+        PhotoCellCollectionViewCell *selected = (PhotoCellCollectionViewCell *)sender;
+        
+        dvc.fotoId = selected.fotoId;
+    }
+}
 
 
 @end

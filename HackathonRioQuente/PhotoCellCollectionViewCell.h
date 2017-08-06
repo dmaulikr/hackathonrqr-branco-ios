@@ -20,6 +20,7 @@ IB_DESIGNABLE
 @property (assign, nonatomic) BOOL voted;
 @property (assign, nonatomic) BOOL imageAssing;
 @property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) NSString *fotoId;
 
 -(void)bater;
 
