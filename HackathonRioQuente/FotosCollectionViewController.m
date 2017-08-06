@@ -8,8 +8,11 @@
 
 #import "FotosCollectionViewController.h"
 #import "PhotoCellCollectionViewCell.h"
+#import "Photo.h"
 
 @interface FotosCollectionViewController ()
+
+@property (strong, nonatomic) NSMutableArray *photosArray;
 
 @end
 
@@ -29,7 +32,17 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Do any additional setup after loading the view.
     //self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.photosArray = [[NSMutableArray alloc] init];
+    
+    [Photo getPhotos:^(NSString *responseObject) {
+        [self.photosArray addObject:responseObject];
+        [self.collectionView reloadData];
+    } falha:^(NSError *error) {
+        
+    }];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,7 +67,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 13;
+    return self.photosArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,5 +142,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [cell bater];
     [cell setNeedsDisplay];
 }
+
+
 
 @end
