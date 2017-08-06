@@ -132,6 +132,17 @@ const NSString *cloudnaryBuy = @"http://res.cloudinary.com/datveqkzs/image/uploa
         //[self presentViewController:alert animated:YES completion:nil];
         [self presentViewController:alert animated:YES completion:nil];
     }
+    else{
+            NSArray *activityItems = @[self.detailsPhotoView.image];
+            UIActivityViewController *activityViewControntroller = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+            activityViewControntroller.excludedActivityTypes = @[];
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                activityViewControntroller.popoverPresentationController.sourceView = self.view;
+                activityViewControntroller.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
+            }
+            [self presentViewController:activityViewControntroller animated:true completion:nil];
+        
+    }
 }
 
 @end
