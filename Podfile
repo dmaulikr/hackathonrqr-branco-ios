@@ -14,4 +14,5 @@ pod "MKInputBoxView"
 pod "Firebase/Core"
 pod "Firebase/Database"
 pod "ISO8601DateFormatter"
+pod "SDWebImage", "~> 4.0"
 end

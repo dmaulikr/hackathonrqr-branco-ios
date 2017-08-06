@@ -37,7 +37,9 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [Photo getPhotos:^(NSString *responseObject) {
         [self.photosArray addObject:responseObject];
-        [self.collectionView reloadData];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.photosArray.count - 1 inSection:0];
+        NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+        [self.collectionView insertItemsAtIndexPaths:indexPaths];
     } falha:^(NSError *error) {
         
     }];
@@ -83,32 +85,53 @@ static NSString * const reuseIdentifier = @"Cell";
     //[cell.coracao bater];
     //cell.coracao.backgroundColor = [UIColor whiteColor];
     //cell.coracao.corBorda = [UIColor blackColor];
-//    cell.coracao.cor = [UIColor whiteColor];
-//    cell.coracao.corBorda = [UIColor blackColor];
+    //    cell.coracao.cor = [UIColor whiteColor];
+    //    cell.coracao.corBorda = [UIColor blackColor];
     
+    NSString *url = [self.photosArray objectAtIndex:indexPath.row];
     cell.voted = indexPath.row % 2 == 0 ? YES : NO;
     cell.numberLikes = indexPath.row;
+    cell.photoUrl = url;
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^(void) {
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        UIImage* image = [[UIImage alloc] initWithData:imageData];
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.imageView setImage:image];
+                [cell setNeedsDisplay];
+                //cell.imageView.image = image;
+                //[avatar setImage:image];
+                //  [cell setNeedsLayout];
+            });
+        }
+    });
+    
     //cell.coracao.bpm = indexPath.row;
     [cell setNeedsDisplay];
     return cell;
 }
+
 
 #pragma mark <UICollectionViewDelegate>
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize newSize = CGSizeZero;
-    newSize.height = 100;
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBounds.size;
     
-    newSize.width = screenSize.width * 0.94;
+    newSize.width = screenSize.width * 0.95;
     newSize.height = 555.0;
     
     return newSize;
 }
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(12, 12, 3, 0);
+}
 
 /*
  // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -127,13 +150,13 @@ static NSString * const reuseIdentifier = @"Cell";
 // - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 //	return NO;
 // }
-// 
+//
 // - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
 //	return YES;
 // }
-// 
+//
 // - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-//     
+//
 // }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

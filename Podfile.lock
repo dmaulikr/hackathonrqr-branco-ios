@@ -64,6 +64,9 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.3)
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -73,6 +76,7 @@ DEPENDENCIES:
   - JSONModel
   - MKInputBoxView
   - MRProgress
+  - SDWebImage (~> 4.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -86,7 +90,8 @@ SPEC CHECKSUMS:
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   MKInputBoxView: 022c89a4815fbcf2fcdea95f967fdba2c4f5fb73
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 79886f605985a509a681dc9a4f432bd487deef11
+PODFILE CHECKSUM: 7c82997e684f212ccdf3cdeb62bf62da5b64192c
 
 COCOAPODS: 1.2.0
